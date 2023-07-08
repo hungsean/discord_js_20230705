@@ -1,0 +1,7 @@
+/.env
+/.vscode
+/avatar.png
+/discord_js_20230705.code-workspace
+/discord_js_20230705_cmd.code-workspace
+/node_modules
+/yarn.lock

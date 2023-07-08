@@ -1,0 +1,17 @@
+{
+  "name": "disbot",
+  "version": "1.0.0",
+  "main": "src/main.js",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.10.2",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.39.0"
+  },
+  "scripts": {
+    "deploy": "node src/deploy_commands.js",
+    "start" : "node src/main.js"
+  }
+}
