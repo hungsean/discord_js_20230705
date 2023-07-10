@@ -12,3 +12,5 @@ module.exports = {
         await message.channel.send(`${message.member.displayName} ${update}`);
     },
 };
+
+// 偵測embed時除了偵測是否為null, 還要確認image是否為空
