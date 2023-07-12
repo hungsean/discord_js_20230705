@@ -18,7 +18,7 @@ module.exports = {
         const updateMessage = await message.channel.send(`${message.member.displayName} ${update}`);
         if (updateMessage.embeds.length === 0) ;
         {
-            await updateMessage.delete();
+            // await updateMessage.delete();
             const embed = new EmbedBuilder()
                 .setTitle('Error')
                 .setDescription('The vxtwitter is not available.')
