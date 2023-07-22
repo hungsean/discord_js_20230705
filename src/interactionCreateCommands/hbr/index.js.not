@@ -1,0 +1,44 @@
+const {SlashCommandBuilder} = require('discord.js');
+
+module.exports = {
+    data: new SlashCommandBuilder()
+        .setName('hbr')
+        .setDescription('About Heaven Burns Red commands')
+        .addSubcommand(subcommand =>
+            subcommand
+                .setName('timer')
+                .setDescription('set up a timer')
+                .addIntegerOption(option =>
+                    option.setName('stone')
+                        .setDescription('The amount of stone you have')
+                        .setRequired(true)
+                        .setMinValue(0)
+                        .setMaxValue(4)
+                )
+                .addIntegerOption(option =>
+                    option.setName('hour')
+                        .setDescription('How many hours left')
+                        .setRequired(true)
+                        .setMinValue(0)
+                        .setMaxValue(4)
+                )
+                .addIntegerOption(option =>
+                    option.setName('minute')
+                        .setDescription('How many minutes left')
+                        .setRequired(true)
+                        .setMinValue(0)
+                        .setMaxValue(59)
+                )
+                .addIntegerOption(option =>
+                    option.setName('second')
+                        .setDescription('How many seconds left')
+                        .setRequired(true)
+                        .setMinValue(0)
+                        .setMaxValue(59)
+                )
+        ),
+
+    async execute(interaction) {
+        
+    }
+};

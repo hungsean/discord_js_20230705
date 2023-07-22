@@ -38,4 +38,8 @@ for (const file of eventFiles) {
 	console.log(`${event.name} => Events`);
 }
 
+
+
+		
+
 client.login(process.env.TOKEN);
