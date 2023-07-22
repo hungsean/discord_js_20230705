@@ -1,4 +1,5 @@
 const {SlashCommandBuilder} = require('discord.js');
+// const user = require('../../messageCreateCommands/rankCheck/index.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -23,6 +24,9 @@ module.exports = {
         else if (interaction.options.getSubcommand() === 'end') {
             await interaction.reply('Rank ended!');
             this.rankStarted = false;
+
+            console.log(`[info] rank: `)
+            // console.log(user);
         }
     }
 }
