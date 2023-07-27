@@ -21,5 +21,14 @@ module.exports = {
                 }
             }
         }
+    },
+    saveJson(data, path) {
+        fs.writeFile(
+            path, JSON.stringify(data),
+            (err) => {
+                if (err) throw err;
+                console.log(`[info] saved: ${path}`);
+            }
+        );
     }
 }

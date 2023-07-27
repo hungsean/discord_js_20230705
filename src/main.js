@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
-const { loadCommands } = require('./function');
+const { loadCommands, saveJson } = require('./function');
 const { dotenv } = require('dotenv').config();
 
 const client = new Client({
@@ -37,6 +37,12 @@ for (const file of eventFiles) {
 	}
 	console.log(`${event.name} => Events`);
 }
+
+const rank_data = JSON.parse(fs.readFileSync(path.join(process.env.PATH_DATA, 'rank.json')));
+rank_data.rankStarted = false;
+rank_data.user = new Collection().toJSON();
+saveJson(rank_data, path.join(process.env.PATH_DATA, 'rank.json'));
+
 
 
 

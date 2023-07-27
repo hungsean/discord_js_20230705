@@ -1,5 +1,7 @@
 const {SlashCommandBuilder} = require('discord.js');
-// const user = require('../../messageCreateCommands/rankCheck/index.js');
+const data_path = process.env.PATH_DATA + '\\rank.json';
+const data = require(data_path);
+const {saveJson} = require(process.env.PATH_FUNCTION);
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -15,18 +17,17 @@ module.exports = {
                 .setName('end')
                 .setDescription('End a rank')
         ),
-    rankStarted: false,
     async execute(interaction) {
         if (interaction.options.getSubcommand() === 'start') {
+            data.rankStarted = true;
+            saveJson(data, data_path);
             await interaction.reply('Rank started!');
-            this.rankStarted = true;
+        
         }
         else if (interaction.options.getSubcommand() === 'end') {
+            data.rankStarted = false;
+            saveJson(data, data_path);
             await interaction.reply('Rank ended!');
-            this.rankStarted = false;
-
-            console.log(`[info] rank: `)
-            // console.log(user);
         }
     }
 }
