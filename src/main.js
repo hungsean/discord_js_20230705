@@ -38,10 +38,10 @@ for (const file of eventFiles) {
 	console.log(`${event.name} => Events`);
 }
 
-const rank_data = JSON.parse(fs.readFileSync(path.join(process.env.PATH_DATA, 'rank.json')));
-rank_data.rankStarted = false;
-rank_data.user = new Collection().toJSON();
-saveJson(rank_data, path.join(process.env.PATH_DATA, 'rank.json'));
+// const rank_data = JSON.parse(fs.readFileSync(path.join(process.env.PATH_DATA, 'rank.json')));
+// rank_data.rankStarted = false;
+// rank_data.user = new Collection().toJSON();
+// saveJson(rank_data, path.join(process.env.PATH_DATA, 'rank.json'));
 
 
 
